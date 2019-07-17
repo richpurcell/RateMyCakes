@@ -1,0 +1,12 @@
+div.top div.detail {display: block;}
+div.container {margin-top: 50px; }
+div.cake_form {width: 350px; height: 350px; border: solid black 2px; padding: 30px; color: grey}
+span, hr {background-color: lightblue; height: 2px;}
+div.cake_form, div.pic_rev {display: inline-block; vertical-align: top; margin-top: 30px;}
+div.pic_rev {overflow: scroll; height: 350px; width: 700px; margin-left: 30px;}
+div.image, div.rev {display: inline-block; vertical-align: top;}
+img {width: 200px;}
+div.space {width: 100px;}
+select, input {width: 300px;}
+div.rev form button {width: 100px}
+div.detail {width: 980px; height: 500px; margin-top: 50px;}

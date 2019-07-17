@@ -10,8 +10,8 @@ app.use(bp.json());
 // app.use(bp.urlencoded({extended: true})) // Will eventuall exchange this for thre above line
 
 var path = require('path');
-// app.use(express.static(__dirname + '/public/dist/public'));
-app.use(express.static(__dirname + './static')); // Will eventuall exchange this for thre above line
+app.use(express.static(__dirname + '/public/dist/public'));
+// app.use(express.static(__dirname + './static')); // Will eventuall exchange this for thre above line
 
 app.use(flash());
 

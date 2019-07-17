@@ -27,6 +27,12 @@ module.exports = {
             .then(data=>res.json(data))
             .catch(err=>res.json(err))
     },
+    add_cake_review: (req, res)=>{ // Add a Review to a Cake using the ID
+        console.log('The Cake id requested is:', req.params.id);
+        Cake.findByIdAndUpdate(req.params.id, {$push: {reviews: {stars: req.body.stars, review: req.body.review}}})
+            .then(data=>res.json(data))
+            .catch(err=>res.json(err))
+    },
     delete_cake: (req, res)=>{ // Delete a Cake by ID
         console.log('The Cake id requested is:', req.params.id);
         Cake.remove({_id: req.params.id})

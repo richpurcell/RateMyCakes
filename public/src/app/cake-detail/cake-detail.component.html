@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Baked by {{cakeToShow.cake.baker}}</h1>
+    <div class="image">
+        <img src="{{cakeToShow.cake.imageUrl}}" alt="">
+    </div>
+    <div class="detail">
+        <div class="average">
+            <h4>Average rating: {{cakeToShow.average}} stars</h4>
+        </div>
+        <div class="reviewBox">
+            <div class="reviews" *ngFor="let review of cakeToShow.reviews">
+                <h4>{{review.review}}</h4>
+                <h4>{{review.stars}} stars</h4>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<div class="container">
+  <div class="top">
+    <h1>Rate my cakes</h1>
+    <div class="cake_form">
+      <h5>Submit a cake to be rated</h5>
+      <span><hr></span>
+      <form>
+        <div class="form-group row">
+          <label for="inputEmail1" class="col-sm-5 col-form-label">Baker name:</label>
+          <input type="text" class="form-control" id="inputEmail3" name="new_cake.baker" [(ngModel)]="new_cake.baker" placeholder="Baker Name">
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-5 col-form-label">Image url:</label>
+          <input type="text" class="form-control" id="inputPassword3" name="new_cake.imageUrl" [(ngModel)]="new_cake.imageUrl" placeholder="Image url">
+        </div>
+        <div class="form-group row">
+          <button type="submit" value="Create Cake" class="btn btn-primary" (click)="newCake()">Submit</button>
+        </div>
+      </form>
+    </div>
+    <div class="pic_rev">
+      <div class="item" *ngFor="let cake of cakes">
+        <table>
+          <tr>
+            <td>
+              <div class="image">
+                <img src="{{cake.imageUrl}}" alt="" (click)="cakeToShow(cake)">
+              </div>
+            </td>
+            <td><div class="space"></div></td>
+            <td>
+              <div class="rev">
+                <form (submit)="addReviewToCake(cake._id)">
+                  <div class="form-group row">
+                        <select id="inputState" class="form-control" name="review.stars" [(ngModel)]="review.stars">
+                          <option selected value="5">5 Stars</option>
+                          <option value="4">4 Stars</option>
+                          <option value="3">3 Stars</option>
+                          <option value="2">2 Stars</option>
+                          <option value="1">1 Stars</option>
+                        </select>
+                  </div>
+                  <div class="form-group row">
+                    <input type="text" class="form-control" id="inputPassword3" name="review.review" [(ngModel)]="review.review" placeholder="Type your comment here">
+                  </div>
+                  <input type="hidden" name="edit.id" [(ngModel)]="cake._id"/>
+                  <div class="form-group row">
+                    <button type="submit" value="Create Cake" class="btn btn-primary" >Rate</button>
+                  </div>
+                </form>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="detail">
+    <app-cake-detail *ngIf="selectedCake" [cakeToShow]="selectedCake"></app-cake-detail>
+  </div>
+</div>

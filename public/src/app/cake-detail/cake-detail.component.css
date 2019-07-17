@@ -1,0 +1,6 @@
+div.reviews { width: 200px;}
+div.image img {width: 500px;}
+div.detail, div.image {display: inline-block; vertical-align: top; margin-top: 40px;}
+div.detail {margin-left: 100px; }
+div.reviews {margin-top: 20px; overflow-wrap: normal; }
+div.reviewBox {height: 300px; overflow: scroll;}
